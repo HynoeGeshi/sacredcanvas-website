@@ -1,0 +1,92 @@
+/* SacredCanvas · A Wicked Little Affair, Halloween 2026.
+   Reversible presentation only. The existing content, links and controls remain. */
+body.tropical.halloween-2026 {
+  --h-bg:#100d12; --h-panel:#20151e; --h-ink:#f4eadc; --h-muted:#d1bdc1;
+  --h-gold:#dec19a; --h-copper:#bf8b63; --h-line:#c79c6a59; --h-rose:#d9b3bc;
+  --draft-background:#100d12; --draft-surface:#20151e; --draft-accent:#dec19a;
+  background:var(--h-bg)!important; color:var(--h-ink); font-family:Arial,sans-serif;
+}
+body.tropical.halloween-2026 .tropical-environment { background:#100d12; }
+body.tropical.halloween-2026 .coastal-photo {
+  background-image:url('./haunted-soiree-2026.webp'); background-position:center; background-size:cover;
+  filter:brightness(calc(.75 - var(--scene-night,0)*.1)) saturate(.8);
+  transform:scale(calc(1.01 + var(--scene-night,0)*.015)); transition:transform .3s linear,filter .3s linear;
+}
+body.tropical.halloween-2026 .coastal-photo::after { background:none; }
+body.tropical.halloween-2026 .tropical-environment::after {
+  background:linear-gradient(90deg,#100d1240,#100d1233 55%,#100d1266),linear-gradient(0deg,#100d12c9,transparent 60%); opacity:1;
+}
+body.tropical.halloween-2026 :is(.tropical-sun,.tropical-water,.tropical-moon,.tropical-stars) { display:none; }
+
+/* The specificity also covers the preserved scroll-based day/night and saved-color rules. */
+body.tropical.halloween-2026:is([data-night],:not([data-night])) :is(header.newcomer-header,main>.hero,main>.section,main>.mission-dashboard,.closing) {
+  background:linear-gradient(125deg,#171017ed,#251624e8 70%,#351d2ae0)!important;
+  border:1px solid var(--h-line); box-shadow:inset 0 1px #f5debd12,0 22px 60px #0003;
+  color:var(--h-ink); border-radius:18px;
+}
+body.tropical.halloween-2026:is([data-night],:not([data-night])) header.newcomer-header {
+  background:#151015f5!important; backdrop-filter:blur(18px); box-shadow:0 10px 35px #0005;
+}
+body.tropical.halloween-2026:is([data-night],:not([data-night])) :is(p,.intro,.fine,small,.text-link,.clip p,.fund span,summary,details p,.sound-mixer label,footer a,footer span) { color:var(--h-muted)!important; }
+body.tropical.halloween-2026:is([data-night],:not([data-night])) :is(h1,h2,h3,.brand,.brand span,footer strong) { color:var(--h-ink)!important; text-shadow:none; }
+body.tropical.halloween-2026:is([data-night],:not([data-night])) :is(.eyebrow,.clip-top,h1 em,h2 em,.milestones summary) { color:var(--h-gold)!important; }
+body.tropical.halloween-2026:is([data-night],:not([data-night])) :is(.journey,.progress-card,.voices,.clip,.fund) {
+  background:linear-gradient(135deg,#2b1b29f5,#1c141fed)!important; border:1px solid var(--h-line);
+  color:var(--h-ink)!important; box-shadow:inset 0 1px #ead3b51a,0 14px 40px #0003;
+}
+body.tropical.halloween-2026:is([data-night],:not([data-night])) :is(.journey,.progress-card,.voices,.clip,.fund) :is(h2,h3,p,small,summary,.eyebrow,.intro,.fine,.text-link,.clip-top,.fund span) { color:var(--h-ink)!important; }
+body.tropical.halloween-2026:is([data-night],:not([data-night])) .button {
+  background:linear-gradient(135deg,#efdfc5,#d7b58e 48%,#b98560)!important; color:#26151c!important;
+  border:1px solid #e2c09b; box-shadow:inset 0 1px #fff5dd88,0 8px 24px #0004; font-weight:650;
+}
+body.tropical.halloween-2026 .button:hover { box-shadow:inset 0 1px #fff7e5,0 9px 30px #c5905b29; }
+body.tropical.halloween-2026:is([data-night],:not([data-night])) :is(.social-links a,.social-link-page,.newcomer-nav a) { color:var(--h-ink)!important; border-color:var(--h-line); }
+body.tropical.halloween-2026 .social-links a { background:#f3d6b309; }
+body.tropical.halloween-2026 :is(.social-links a,.newcomer-nav a):hover { background:#c79c6a20; }
+body.tropical.halloween-2026 :is(h1,h2,h3,.brand,.newcomer-paths strong) { font-family:Didot,'Bodoni MT','Times New Roman',serif; font-weight:400; }
+body.tropical.halloween-2026 .hero h1 { font-size:clamp(50px,6.2vw,92px); line-height:1.02; letter-spacing:-.035em; }
+body.tropical.halloween-2026 .seasonal-kicker {
+  font-family:'Snell Roundhand','Brush Script MT',Georgia,serif; font-style:italic; font-size:clamp(25px,2.7vw,34px);
+  line-height:1.25; letter-spacing:.015em; margin:0 0 20px; color:var(--h-rose)!important;
+}
+body.tropical.halloween-2026 .hero .logo-art {
+  min-height:470px; height:clamp(470px,43vw,570px); max-width:480px; border-radius:180px 180px 18px 18px;
+  background:#1c131a url('./haunted-soiree-2026.webp') 76% center/auto 100% no-repeat;
+  border:1px solid #d6b17d; outline:1px solid #b7865947; outline-offset:8px;
+  box-shadow:inset 0 0 0 7px #1b141940,0 22px 70px #0008,0 0 35px #c5895026;
+}
+body.tropical.halloween-2026 .hero .logo-art::before {
+  content:''; position:absolute; inset:11px; border:1px solid #e7cca066; border-radius:inherit; pointer-events:none; z-index:1;
+}
+body.tropical.halloween-2026 .hero .logo-art img {
+  position:absolute; right:20px; bottom:20px; display:block; width:108px; height:108px; object-fit:cover;
+  border-radius:50%; border:2px solid #dfbd91; box-shadow:0 4px 22px #0008;
+  filter:grayscale(1) sepia(.65) contrast(1.13) brightness(.9); z-index:2;
+}
+body.tropical.halloween-2026 .newcomer-paths a {
+  background:linear-gradient(145deg,#f2d2ac08,#78394a12); border-color:var(--h-line); border-radius:12px;
+}
+body.tropical.halloween-2026 .newcomer-paths span { color:var(--h-gold); }
+body.tropical.halloween-2026 .video-load { background:radial-gradient(ellipse at top,#5b293b,#201520); color:var(--h-ink); border-color:#ae7e626e; }
+body.tropical.halloween-2026 .video-load span { color:var(--h-muted); }
+body.tropical.halloween-2026 :is(details,.florida,.membership,footer,.ribbon) { border-color:var(--h-line); }
+body.tropical.halloween-2026:is([data-night],:not([data-night])) .ribbon { background:#221620d9; color:var(--h-gold); }
+body.tropical.halloween-2026:is([data-night],:not([data-night])) footer { background:#130e15ed; color:var(--h-muted); }
+body.tropical.halloween-2026 .live-note { border-left-color:var(--h-copper); }
+body.tropical.halloween-2026 .sound-mixer input { accent-color:var(--h-copper); }
+body.tropical.halloween-2026 :is(a,button,input,summary):focus-visible { outline:3px solid #efd3aa; box-shadow:0 0 0 6px #21121b; }
+body.tropical.halloween-2026 .skip-link { background:#2b1724; color:var(--h-ink)!important; border-color:var(--h-gold); }
+
+@media(max-width:760px) {
+  body.tropical.halloween-2026 .coastal-photo { background-position:68% center; }
+  body.tropical.halloween-2026 .hero .logo-art { min-height:390px; height:430px; width:100%; max-width:330px; }
+  body.tropical.halloween-2026 .hero .logo-art img { width:86px; height:86px; right:16px; bottom:16px; }
+  body.tropical.halloween-2026 .hero h1 { font-size:clamp(43px,12vw,65px); }
+  body.tropical.halloween-2026 .seasonal-kicker { margin-bottom:18px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  body.tropical.halloween-2026 { scroll-behavior:auto; }
+  body.tropical.halloween-2026 *,body.tropical.halloween-2026 *::before,body.tropical.halloween-2026 *::after { animation:none!important; transition:none!important; }
+}
+
+body.tropical.halloween-2026 .newcomer-nav{scrollbar-width:thin;scrollbar-color:#b88b64 #21151d}body.tropical.halloween-2026 .newcomer-nav::-webkit-scrollbar{height:4px;background:#21151d}body.tropical.halloween-2026 .newcomer-nav::-webkit-scrollbar-thumb{background:#b88b64;border-radius:8px}
