@@ -1,0 +1,93 @@
+/* SacredCanvas · Hello, November, 2026.
+   Reversible presentation only. Existing content, links and controls remain. */
+body.tropical.november-2026 {
+  --n-bg:#1d1714; --n-panel:#34261f; --n-ink:#f7efe1; --n-muted:#e0cdbd;
+  --n-gold:#dcb990; --n-copper:#cf9968; --n-line:#cc9c6c66; --n-sage:#b6c0a2;
+  --draft-background:#1d1714; --draft-surface:#34261f; --draft-accent:#dcb990;
+  background:var(--n-bg)!important; color:var(--n-ink); font-family:Arial,sans-serif;
+}
+body.tropical.november-2026 .tropical-environment { background:var(--n-bg); }
+body.tropical.november-2026 .coastal-photo {
+  background-image:url('./november-2026.webp'); background-position:center; background-size:cover;
+  filter:brightness(calc(.83 - var(--scene-night,0)*.08)) saturate(.85);
+  transform:scale(calc(1.01 + var(--scene-night,0)*.015)); transition:transform .3s linear,filter .3s linear;
+}
+body.tropical.november-2026 .coastal-photo::after { background:none; }
+body.tropical.november-2026 .tropical-environment::after {
+  background:linear-gradient(90deg,#1d17144d,#1d17141a 55%,#1d17144d),linear-gradient(0deg,#1d1714cc,transparent 65%); opacity:1;
+}
+body.tropical.november-2026 :is(.tropical-sun,.tropical-water,.tropical-moon,.tropical-stars) { display:none; }
+
+/* Keep the existing scenery controls while covering their saved color rules. */
+body.tropical.november-2026:is([data-night],:not([data-night])) :is(header.newcomer-header,main>.hero,main>.section,main>.mission-dashboard,.closing) {
+  background:linear-gradient(125deg,#241c17f5,#35251eeF 70%,#46282ae8)!important;
+  border:1px solid var(--n-line); box-shadow:inset 0 1px #f5debd16,0 22px 60px #0003;
+  color:var(--n-ink); border-radius:22px;
+}
+body.tropical.november-2026:is([data-night],:not([data-night])) header.newcomer-header {
+  background:#251d18f5!important; backdrop-filter:blur(18px); box-shadow:0 10px 35px #0005;
+}
+body.tropical.november-2026:is([data-night],:not([data-night])) :is(p,.intro,.fine,small,.text-link,.clip p,.fund span,summary,details p,.sound-mixer label,footer a,footer span) { color:var(--n-muted)!important; }
+body.tropical.november-2026:is([data-night],:not([data-night])) :is(h1,h2,h3,.brand,.brand span,footer strong) { color:var(--n-ink)!important; text-shadow:none; }
+body.tropical.november-2026:is([data-night],:not([data-night])) :is(.eyebrow,.clip-top,h1 em,h2 em,.milestones summary) { color:var(--n-gold)!important; }
+body.tropical.november-2026:is([data-night],:not([data-night])) :is(.journey,.progress-card,.voices,.clip,.fund) {
+  background:linear-gradient(135deg,#3a2921f5,#2d221ded)!important; border:1px solid var(--n-line);
+  color:var(--n-ink)!important; box-shadow:inset 0 1px #ead3b51a,0 14px 40px #0003;
+}
+body.tropical.november-2026:is([data-night],:not([data-night])) :is(.journey,.progress-card,.voices,.clip,.fund) :is(h2,h3,p,small,summary,.eyebrow,.intro,.fine,.text-link,.clip-top,.fund span) { color:var(--n-ink)!important; }
+body.tropical.november-2026:is([data-night],:not([data-night])) .button {
+  background:linear-gradient(135deg,#f2e4ce,#dbb88c 48%,#bd845b)!important; color:#2d1f18!important;
+  border:1px solid #e2c09b; box-shadow:inset 0 1px #fff5dd88,0 8px 24px #0004; font-weight:650;
+}
+body.tropical.november-2026 .button:hover { box-shadow:inset 0 1px #fff7e5,0 9px 30px #c5905b29; }
+body.tropical.november-2026:is([data-night],:not([data-night])) :is(.social-links a,.social-link-page,.newcomer-nav a) { color:var(--n-ink)!important; border-color:var(--n-line); }
+body.tropical.november-2026 .social-links a { background:#f3d6b30c; }
+body.tropical.november-2026 :is(.social-links a,.newcomer-nav a):hover { background:#c79c6a20; }
+body.tropical.november-2026 :is(h1,h2,h3,.brand,.newcomer-paths strong) { font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif; font-weight:400; }
+body.tropical.november-2026 .hero h1 { font-size:clamp(50px,6.2vw,92px); line-height:1.04; letter-spacing:-.035em; }
+body.tropical.november-2026 .seasonal-kicker {
+  font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif; font-style:italic; font-size:clamp(25px,2.7vw,34px);
+  line-height:1.25; letter-spacing:.015em; margin:0 0 20px; color:var(--n-sage)!important;
+}
+body.tropical.november-2026 .hero .logo-art {
+  min-height:470px; height:clamp(470px,43vw,570px); max-width:480px; border-radius:26px;
+  background:#34251b url('./november-2026.webp') 76% center/auto 100% no-repeat;
+  border:1px solid #cfa776; outline:1px solid #b7865947; outline-offset:8px;
+  box-shadow:inset 0 0 0 7px #2b211b40,0 22px 70px #0008,0 0 35px #c589501f;
+}
+body.tropical.november-2026 .hero .logo-art::before {
+  content:''; position:absolute; inset:11px; border:1px solid #e7cca066; border-radius:inherit; pointer-events:none; z-index:1;
+}
+body.tropical.november-2026 .hero .logo-art img {
+  position:absolute; right:20px; bottom:20px; display:block; width:108px; height:108px; object-fit:cover;
+  border-radius:50%; border:2px solid #dfbd91; box-shadow:0 4px 22px #0008;
+  filter:grayscale(.7) sepia(.5) contrast(1.06) brightness(.98); z-index:2;
+}
+body.tropical.november-2026 .newcomer-paths a {
+  background:linear-gradient(145deg,#b6c0a20d,#78394a14); border-color:var(--n-line); border-radius:14px;
+}
+body.tropical.november-2026 .newcomer-paths span { color:var(--n-gold); }
+body.tropical.november-2026 .video-load { background:radial-gradient(ellipse at top,#5f3932,#2d241e); color:var(--n-ink); border-color:#ae7e626e; }
+body.tropical.november-2026 .video-load span { color:var(--n-muted); }
+body.tropical.november-2026 :is(details,.florida,.membership,footer,.ribbon) { border-color:var(--n-line); }
+body.tropical.november-2026:is([data-night],:not([data-night])) .ribbon { background:#33251fd9; color:var(--n-gold); }
+body.tropical.november-2026:is([data-night],:not([data-night])) footer { background:#221b17ed; color:var(--n-muted); }
+body.tropical.november-2026 .live-note { border-left-color:var(--n-copper); }
+body.tropical.november-2026 .sound-mixer input { accent-color:var(--n-copper); }
+body.tropical.november-2026 :is(a,button,input,summary):focus-visible { outline:3px solid #efd3aa; box-shadow:0 0 0 6px #2b2019; }
+body.tropical.november-2026 .skip-link { background:#39271f; color:var(--n-ink)!important; border-color:var(--n-gold); }
+body.tropical.november-2026 .newcomer-nav { scrollbar-width:thin; scrollbar-color:#b88b64 #30251d; }
+body.tropical.november-2026 .newcomer-nav::-webkit-scrollbar { height:4px; background:#30251d; }
+body.tropical.november-2026 .newcomer-nav::-webkit-scrollbar-thumb { background:#b88b64; border-radius:8px; }
+
+@media(max-width:760px) {
+  body.tropical.november-2026 .coastal-photo { background-position:68% center; }
+  body.tropical.november-2026 .hero .logo-art { min-height:390px; height:430px; width:100%; max-width:330px; }
+  body.tropical.november-2026 .hero .logo-art img { width:86px; height:86px; right:16px; bottom:16px; }
+  body.tropical.november-2026 .hero h1 { font-size:clamp(43px,12vw,65px); }
+  body.tropical.november-2026 .seasonal-kicker { margin-bottom:18px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  body.tropical.november-2026 { scroll-behavior:auto; }
+  body.tropical.november-2026 *,body.tropical.november-2026 *::before,body.tropical.november-2026 *::after { animation:none!important; transition:none!important; }
+}
